@@ -1,0 +1,41 @@
+{
+  "name": "js-ready-controller",
+  "version": "0.1.0",
+  "description": "ReadyController - Минималистичный контроллер инициализации ресурсов.",
+  "author": "Alexander Lonberg <alexlonberg@gmail.com>",
+  "homepage": "https://github.com/AlexLonberg/js-ready-controller",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexLonberg/js-ready-controller.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "js-ready-controller",
+    "ReadyController"
+  ],
+  "scripts": {
+    "lint": "eslint --config ./eslint.config.js",
+    "test": "vitest run --coverage --config vitest.config.ts",
+    "bench": "vitest bench --config vitest.config.ts",
+    "predist": "npm run lint && vitest run --browser.enabled=false --coverage.enabled=false --config vitest.config.ts && node ./scripts/dist.js",
+    "dist": "tsc --project tsconfig.dist.json"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^24.5.0",
+    "@vitest/coverage-v8": "^5.1.0",
+    "eslint": "^10.14.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vitest": "^5.1.0"
+  },
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "main": "./src/index.ts"
+}

@@ -1,0 +1,30 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": false,
+    "isolatedDeclarations": false,
+    "rootDir": ".",
+    "outDir": "./.temp/.project",
+    "tsBuildInfoFile": "./.temp/.tsbuildinfo_project",
+    "lib": [
+      "ESNext"
+    ],
+    "types": [
+      "node" // В проекте должны быть установлены типы @types/node
+    ],
+    "typeRoots": null,
+    "allowJs": true
+  },
+  "include": [
+    // Не используем в GLOB `{ts,js}` - TS не умеет их обрабатывать и не сможет детектировать нужный конфиг для файла из
+    // общего _"tsconfig.json#references"_.
+    "scripts/**/*.ts",
+    "scripts/**/*.js"
+  ],
+  "files": [
+    "eslint.rules.js",
+    "eslint.config.js",
+    "vitest.config.ts"
+  ],
+  "exclude": []
+}
